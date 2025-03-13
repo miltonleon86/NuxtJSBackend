@@ -1,0 +1,37 @@
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
+# Prepare Nuxt
+RUN npm run postinstall
+
+# Build the application
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only the built application from the builder stage
+COPY --from=builder /app/.output /app/.output
+
+# Expose the port
+EXPOSE 3000
+
+# Set the host to 0.0.0.0 to make the server accessible from outside the container
+ENV HOST=0.0.0.0
+ENV PORT=3000
+ENV NODE_ENV=production
+
+# Start the Nuxt server
+CMD ["node", ".output/server/index.mjs"] 
