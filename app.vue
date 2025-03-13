@@ -9,7 +9,7 @@
         <div class="header-links">
           <a href="https://nuxt.com" target="_blank">Nuxt</a>
           <a href="https://nitro.unjs.io" target="_blank">Nitro</a>
-          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://github.com/miltonleon86/NuxtJSBackend" target="_blank">GitHub</a>
         </div>
       </div>
     </header>
