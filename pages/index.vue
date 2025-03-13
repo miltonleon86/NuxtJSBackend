@@ -14,6 +14,15 @@
         <a href="https://nitro.unjs.io/guide" target="_blank" class="button">Nitro Docs</a>
       </div>
       
+      <div class="graphql-section">
+        <h3>GraphQL API</h3>
+        <p>Explore the GraphQL API using our interactive interface:</p>
+        <div class="buttons">
+          <a href="/api/graphiql" class="button graphql-button">GraphiQL Explorer</a>
+          <NuxtLink to="/graphql" class="button graphql-demo-button">GraphQL Demo</NuxtLink>
+        </div>
+      </div>
+      
       <div v-if="showDebug" class="debug-info">
         <div class="debug-header">
           <h3>Debug Information</h3>
@@ -254,5 +263,36 @@ const message = computed(() => {
   .buttons {
     flex-direction: column;
   }
+}
+
+.graphql-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.graphql-section h3 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.graphql-button {
+  background-color: #E535AB; /* GraphQL pink color */
+}
+
+.graphql-button:hover {
+  background-color: #b5007a;
+  box-shadow: 0 4px 12px rgba(225, 0, 152, 0.3);
+}
+
+.graphql-demo-button {
+  background-color: #4c51bf;
+}
+
+.graphql-demo-button:hover {
+  background-color: #434190;
+  box-shadow: 0 4px 12px rgba(76, 81, 191, 0.3);
 }
 </style> 

@@ -17,6 +17,9 @@ RUN npm run postinstall
 # Build the application
 RUN npm run build
 
+# Verify the build output exists
+RUN ls -la .output/server || echo "Build output not found"
+
 # Production stage
 FROM node:18-alpine
 
@@ -24,6 +27,10 @@ WORKDIR /app
 
 # Copy only the built application from the builder stage
 COPY --from=builder /app/.output /app/.output
+COPY --from=builder /app/package.json /app/package.json
+
+# Verify the copied output exists
+RUN ls -la .output/server || echo "Copied output not found"
 
 # Expose the port
 EXPOSE 3000

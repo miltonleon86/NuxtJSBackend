@@ -15,17 +15,23 @@
     "test:unit": "vitest run",
     "test:unit:watch": "vitest",
     "test:integration": "playwright test",
-    "test:integration:ui": "playwright test --ui"
+    "test:integration:ui": "playwright test --ui",
+    "clean": "rm -rf .output .nuxt node_modules/.cache playwright-report test-results",
+    "clean:docker": "docker-compose down && docker-compose -f docker-compose.production.yml down && docker system prune -f",
+    "clean:all": "npm run clean && npm run clean:docker"
   },
   "dependencies": {
-    "h3": "^1.15.1",
+    "@graphql-tools/schema": "^10.0.0",
+    "graphql": "^16.8.1",
     "nuxt": "^3.8.0"
   },
   "devDependencies": {
+    "@apollo/server": "^4.11.3",
     "@nuxt/test-utils": "^3.17.2",
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.17.24",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/test-utils": "^2.4.6",
+    "h3": "^1.15.1",
     "happy-dom": "^17.4.4",
     "playwright": "^1.51.0",
     "typescript": "^5.2.2",

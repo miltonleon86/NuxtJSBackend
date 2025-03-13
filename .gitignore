@@ -17,6 +17,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Test reports
+playwright-report
+test-results
+
 # Misc
 .DS_Store
 .fleet
