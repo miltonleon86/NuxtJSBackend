@@ -15,7 +15,6 @@ This project demonstrates a modern Nuxt.js application with integrated backend A
 - [API Endpoints](#api-endpoints)
 - [Benefits of Integrated Architecture](#benefits-of-integrated-architecture)
 - [Development Guide](#development-guide)
-- [Troubleshooting](#troubleshooting)
 - [License](#license)
 
 ## Architecture Overview
